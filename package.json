@@ -1,0 +1,33 @@
+{
+  "name": "zmk-config",
+  "module": "index.ts",
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@eslint/js": "^9.30.1",
+    "@types/bun": "latest",
+    "@typescript-eslint/eslint-plugin": "^8.35.1",
+    "@typescript-eslint/parser": "^8.35.1",
+    "eslint": "^9.30.1",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-functional": "^9.0.2",
+    "eslint-plugin-unicorn": "^59.0.1",
+    "husky": "^9.1.7",
+    "knip": "^5.61.3",
+    "typescript": "^5.8.3"
+  },
+  "private": true,
+  "scripts": {
+    "transpile": "bunx -b kts build src/keymap.ts config/glove80.keymap",
+    "build": "bun transpile && ./build.sh",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src",
+    "knip": "knip",
+    "check": "bun typecheck && bun lint && bun knip",
+    "prepare": "husky"
+  },
+  "type": "module",
+  "dependencies": {
+    "keymap-ts": "^0.1.0-alpha.3"
+  }
+}

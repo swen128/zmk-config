@@ -1,0 +1,9 @@
+*~
+*.uf2
+
+/config/glove80.keymap
+
+node_modules/
+
+.idea/
+
